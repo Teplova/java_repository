@@ -27,6 +27,7 @@ public class ApplicationManager {
     private GroupHelper groupHelper;
     private ContactHelper contactHelper;
     private String browser;
+    private  EditContactHelper editContactHelper;
 
 
     public ApplicationManager(String browser) {
@@ -52,6 +53,7 @@ public class ApplicationManager {
         navigatonHelper = new NavigatonHelper(wd);
         sessionHelper = new SessionHelper(wd);
         sessionHelper.login("Admin", "secret");
+        editContactHelper = new EditContactHelper(wd);
 
     }
 
@@ -70,5 +72,9 @@ public class ApplicationManager {
 
     public ContactHelper getContactHelper() {
         return contactHelper;
+    }
+
+    public EditContactHelper getEditContactHelper() {
+        return editContactHelper;
     }
 }
